@@ -3,8 +3,17 @@ layout: page
 title: About
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Business pressures demand faster time to market and app modernization. Your existing estate determines the best approach to modernization. Containers, Kubernetes, and microservices are proven to deliver speed and simplicity, and are being adopted rapidly. IBM Cloud Transformation Advisor can help make this easier for you.
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+Rewriting your entire estate is a pipe dream. Modernization comes in many flavors. IBM’s skills and experience in middleware provide unique insights and approaches to modernize your existing estate with speed, confidence, and reduced risk. View your development investments as an asset, not a liability.
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+To get started on your modernization journey, you must understand the approaches that are right for your inventory. The IBM Cloud Transformation Advisor helps you select the best entry point to deliver value at each step in your journey. IBM can assist you in understanding the path that is right for you.
+
+CHOOSE THE APPROACH THAT BEST FITS YOUR NEEDS
+
+Containerize the monolith. Reduce costs and simplify operations.
+Expose on-prem assets with APIs. APIs enable legacy assets that are difficult to cloud enable.
+Refactor into macroservices. Break down monoliths into deployable components.
+Add new microservices. Innovate incrementally and establish success early.
+Strangle the monolith. Incrementally sunset the monolith. 
+
