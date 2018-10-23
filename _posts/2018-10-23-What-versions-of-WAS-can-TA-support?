@@ -1,7 +1,0 @@
----
-layout: post
-title: "What versions of WAS can TA support?"
-categories: FAQ
----
-
-Version 7+. On version 6.1 we can scan the binaries and make recommendations but we will not be able to get the configuration and create a migration bundle for you.
