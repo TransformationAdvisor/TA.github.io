@@ -1,14 +1,11 @@
 ---
 layout: page
-title: Projects
+title: TA Docs and Videos
 ---
 
-Just a sample of another page that you could include for some purpose in the primary navigation.
+Below you will find links to online resources and documentation relating to Transformation Advisor ...
 
-This could be a great place to list your own projects. But to get you started, here's some handy links:
+- [Installing Transformation Advisor on ICP](https://developer.ibm.com/recipes/tutorials/deploying-transformation-advisor-into-ibm-cloud-private/)
+- [Running Transformation Advisor](https://developer.ibm.com/recipes/tutorials/using-the-transformation-advisor-on-ibm-cloud-private/)
+- [Integrating with Microclimate to migrate an app to ICP using TA](https://developer.ibm.com/recipes/tutorials/transformation-advisor/)
 
-- [List of Jekyll-powered websites](https://github.com/jekyll/jekyll/wiki/Sites)
-- [Octopress, a Jekyll based blog framework](https://github.com/octopress/)
-- [Jekyll documentation](http://jekyllrb.com/)
-- [Jekyll source on GitHub](https://github.com/jekyll/jekyll)
-- [Available plugins](http://jekyllrb.com/docs/plugins/#available_plugins)
