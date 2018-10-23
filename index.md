@@ -1,6 +1,5 @@
 ---
 layout: page
-title: About
 ---
 
 Business pressures demand faster time to market and app modernization. Your existing estate determines the best approach to modernization. Containers, Kubernetes, and microservices are proven to deliver speed and simplicity, and are being adopted rapidly. IBM Cloud Transformation Advisor can help make this easier for you.
