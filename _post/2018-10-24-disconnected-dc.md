@@ -1,0 +1,19 @@
+---
+layout: post
+title: How  do I run TA on the server being analyzed when there's no connection back to ICP hosting the TA?
+categories: FAQ
+author: Niall Horgan
+meta: Datacollector
+---
+
+In this disconnected usecase, you should  download your DC zip from TA as per normal via your browser onto your desktop and then transfer that zip to the server being analysed via ftp (or if no network connection whatsoever via a USB stick). 
+
+Run the DC (as documented on the Data Collector screen in TA) and once completed copy the results zip back to your desktop. 
+
+You can find the results zip on your server in the directory you ran the DC
+
+You can then drop that zip into the TA UI by navigating to the Recommendations screen and uploading via the upload button 
+
+![uploadbutt](/assets/uploadbutt.png)
+
+If you hit the upload button it also describes how to get the file and upload
