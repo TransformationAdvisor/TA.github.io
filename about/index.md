@@ -3,6 +3,28 @@ layout: page
 title: About
 ---
 
+IBM Cloud Transformation Advisor helps you plan, prioritize, and package your on-premises workloads for modernization on IBM Cloud and IBM Cloud Private.  IBM Cloud Transformation Advisor will:
+
+- Gather your preferences regarding your current on-premises environment and desired cloud environments
+- Analyze your existing middleware deployments and upload the results to the IBM Cloud Transformation Advisor UI with a downloaded data collector
+- Provide recommendations for cloud migration and modernization as well as an estimated effort to migrate to different platforms
+- Create necessary deployment artifacts to accelerate your migration into IBM Cloud and IBM Cloud Private
+- When moving to a virtual machine, replatform and provide easy connection to your cloud environment by using IBM WebSphere Application Server for IBM Cloud Private VM Quickstarter.
+
+IBM Cloud Transformation Advisor can scan and analyze the following on-premises workloads....
+
+**Java EE application servers**
+
+- JBoss 4.x - 5.x to Liberty or Full profile
+- WebLogic Server 6.x – 11.x to Liberty or Full profile
+- WebSphere Application Server V7.0 (and later) to Liberty or Full profile
+- Java applications directly 
+
+**Messaging**
+
+- IBM MQ v7+
+
+
 **What is Application modernization?**
 
 Cloud  environments  and services  have  exploded  the  possibilities  for deriving  value  from  existing  and  new  data  sources.  Application requirements in the cognitive era have changed significantly, so in order to respond  to  this changing  market  dynamic businesse must  be  able  to modernize  their  existing  applications  while  maintaining  control  of  their budgets, managing risk, andinvesting in new innovations. For many, application  modernization is just part of a larger digital transformation. The challenge is to find a platform that allows both existing and  new  applications to  converge, providing a unified solutionthat  is robust, secure, scalable, and extensible,for existing and new applications alike. 
