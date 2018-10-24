@@ -1,5 +1,5 @@
 name: IBM Cloud Transformation Advisor FAQ
-markdown: commonmarker
+markdown: redcarpet
 description: "Transformation Advisor Documentation, videos, FAQ & What's New"
 url: "TransformationAdvisor.github.io"
 permalink: /posts/:title
