@@ -1,6 +1,6 @@
 ---
 layout: page
-title: TA Docs and Videos
+title: TA Documentation
 ---
 
 Below you will find links to online resources and documentation relating to Transformation Advisor ...
