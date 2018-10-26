@@ -1,8 +1,6 @@
 ---
 layout: page
-youtubeId:-JNXUBPUlTg
 youtubeId:us-G57BnDPE
-youtubeId:lzFI4e3Ed68
 ---
 
 {% include youtubePlayer.html id=page.youtubeId %}
