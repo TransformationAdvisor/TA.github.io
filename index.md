@@ -27,6 +27,8 @@ IBM Cloud Transformation Advisor can scan and analyze the following on-premises 
 
 - IBM MQ v7+
 
+![macroview](/_assets/TA.jpg)
+
 
 **What is Modernization?**
 
@@ -45,6 +47,8 @@ Transformation Advisor helps companies throughout their evaluation providing ana
 IBM Cloud Transformation Advisor is a free tool developed by IBM and is available from the Catalog when you install IBM Cloud Private.
 
 To get started on your modernization journey, you must understand the approaches that are right for your inventory. The IBM Cloud Transformation Advisor helps you select the best entry point to deliver value at each step in your journey. IBM can assist you in understanding the path that is right for you.
+
+![macroview](/_assets/TA2.jpg)
 
 #### CHOOSE THE APPROACH THAT BEST FITS YOUR NEEDS
 
