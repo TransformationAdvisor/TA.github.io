@@ -16,7 +16,7 @@ title: What's New
 
 **September 6, 2018** Transformation Advisor 1.7.2 released.
 
-    - Fix to complexity determination where incompatible technologies were incorrectly showing as Moderate complexity
+    - Fix to complexity determination
 
 **August 24, 2018** Transformation Advisor 1.7.1 released.
 
@@ -42,7 +42,7 @@ title: What's New
 
 **May 18th, 2018** Transformation Advisor 1.5.0 released.
 
-    - Microclimate integration. You can now deploy simple applications to Liberty on ICP using TA and Microclimate v1.1.1
+    - Microclimate integration. 
     - The recommendations page has been re-designed
     - Ingress supported
     - Support for running TA on ICP on Z
@@ -59,7 +59,7 @@ title: What's New
 **Feb 7th, 2018** Transformation Advisor 1.3.0 released.
 
     - Extended the Data Collector agent platform support (Linux, zLinux, Solaris, AIX, Windows)
-    - Screen flow improved – no longer asked to answer questions as first step – they are now user preferences that may be changed if desired.
+    - Screen flow improved 
     - Recommendations now shows dependencies separately to issues – helps in understanding how easy to move app
     - Development costs can be configured by the customer to reflect better their dev capabilities
 
