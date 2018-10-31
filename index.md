@@ -27,7 +27,7 @@ IBM Cloud Transformation Advisor can scan and analyze the following on-premises 
 
 - IBM MQ v7+
 
-![macroview]({{ site.url }}/_assets/TA.jpg)
+![macroview](/_assets/TA.jpg)
 
 
 **What is Modernization?**
