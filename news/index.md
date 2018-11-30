@@ -3,23 +3,28 @@ layout: page
 title: What's New
 ---
 **November 21, 2018** Transformation Advisor 1.9.0 released.
+
     - IBM MQ
        See what it will take to migrate to IBM Cloud Private
-       See summary of migration complexity for each Queue Manager
+       See summary of migration complexity for each Queue Manager  
        See details of all migration issues including suggested solution
+         
     - Experimental Mode
-       Introducing experimental mode!
-       Press Ctrl + Shift + X to see experimental dev effort values for MQ
+       Introducing experimental mode!  
+       Press Ctrl + Shift + X to see experimental dev effort values for MQ 
+       
     - Shared Libraries on WebSphere
        Shared Library information is now collected for each profile
        The inventory report for each application contains any shared libraries that are being used
-       Shared libraries files are now available in the recommendations screen
+       Shared libraries files are now available in the recommendations screen  
+       
     - Data Collector Enhancements
-       Defaulting to use system Java (non-Windows systems) to reduce library and Java architecture issues
+       Defaulting to use system Java (non-Windows systems) to reduce library and Java architecture issues  
        Support for custom profiles
-       Support for scanning jar and zip files
+       Support for scanning jar and zip files 
        Support for custom location of profileRegistry.xml
        Improved logging for better trouble shooting
+       
     - Export
        Export feature to allow application and summary information to be exported to PDF and CSV
     
