@@ -3,30 +3,25 @@ layout: page
 title: What's New
 ---
 **November 21, 2018** Transformation Advisor 1.9.0 released.
-
     - IBM MQ
        See what it will take to migrate to IBM Cloud Private
        See summary of migration complexity for each Queue Manager  
-       See details of all migration issues including suggested solution
-         
+       See details of all migration issues including suggested solution   
     - Experimental Mode
        Introducing experimental mode!  
-       Press Ctrl + Shift + X to see experimental dev effort values for MQ 
-       
+       Press Ctrl + Shift + X to see experimental dev effort values for MQ     
     - Shared Libraries on WebSphere
        Shared Library information is now collected for each profile
-       The inventory report for each application contains any shared libraries that are being used
-       Shared libraries files are now available in the recommendations screen  
-       
+       Inventory report for each app contains shared libraries being used
+       Shared libraries files are now available in the recommendations screen   
     - Data Collector Enhancements
-       Defaulting to use system Java (non-Windows systems) to reduce library and Java architecture issues  
+       Defaulting to use system Java (non-Windows systems) to reduce issues  
        Support for custom profiles
        Support for scanning jar and zip files 
        Support for custom location of profileRegistry.xml
        Improved logging for better trouble shooting
-       
     - Export
-       Export feature to allow application and summary information to be exported to PDF and CSV
+       PDF/CSV export allows application and summary information to be exported
     
 **October 26, 2018** Transformation Advisor 1.8.1 released.
 
@@ -83,10 +78,10 @@ title: What's New
 
 **Feb 7th, 2018** Transformation Advisor 1.3.0 released.
 
-    - Extended the Data Collector agent platform support (Linux, zLinux, Solaris, AIX, Windows)
+    - Extended the Data Collector agent platform support
     - Screen flow improved 
     - Recommendations now shows dependencies separately to issues
-    - Development costs can be configured by the customer to reflect better their dev capabilities
+    - Dev costs can be configured by the customer to reflect their capabilities
 
 **Jan 15th, 2018** Transformation Advisor 1.2.0 released.
 
