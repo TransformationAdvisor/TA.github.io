@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "INCOMPATIBLE FILES DETECTED" error during upload
-categories: Datacollector Execution
+categories: Datacollector_Upload
 ---
 
 The data collector produces reports that are linked to each application
