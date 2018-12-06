@@ -1,7 +1,9 @@
 ---
 layout: post
-title: "INCOMPATIBLE FILES DETECTED" error during upload
-categories: Datacollector_Upload
+title: Error during upload - INCOMPATIBLE FILES DETECTED
+categories: Datacollector
+author: Niall Horgan
+meta: Datacollector
 ---
 
 The data collector produces reports that are linked to each application
