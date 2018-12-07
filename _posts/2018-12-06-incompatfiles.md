@@ -1,9 +1,8 @@
 ---
 layout: post
 title: Error during upload - INCOMPATIBLE FILES DETECTED
-categories: Datacollector
+categories: Datacollector_Upload
 author: Niall Horgan
-meta: Datacollector
 ---
 
 The data collector produces reports that are linked to each application
@@ -17,9 +16,11 @@ You can resolve this issue as follows:
      InventoryReport.json, InventoryReport.html, AnalysisReport.json, 
      AnalysisReport.html, TechnologyReport.json, TechnologyReport.html
 3. Manually upload the zip file to Transformation Advisor through the UI
-
-You may be missing some applications. You can determine the missing applications as follows:
+```
+You may be missing some applications. To determine missing applications :
+```
 1. Get the list of applications in Transformation Advisor
-2. Look at the profiles directory in <WAS_HOME> to see the full list of applications installed in that profile
-3. Identify the applications in the profile that are missing from Transformation Advisor
+2. Look at the profiles directory in <WAS_HOME> to see the full list of applications 
+   installed in that profile
+3. Identify applications in the profile that are missing from Transformation Advisor
 ```
