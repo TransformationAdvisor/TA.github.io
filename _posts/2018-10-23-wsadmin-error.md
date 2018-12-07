@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  I get an error : wsadmin.sh could not connect to the selected profile when I run the data collector
+title: wsadmin.sh could not connect to the selected profile
 categories: Datacollector
 ---
 
