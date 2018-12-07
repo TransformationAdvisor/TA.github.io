@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Running data collector gives a "libjvm.so failed to load:” error
-categories: Datacollector_Execution
+categories: Datacollector
 author: Niall Horgan
 ---
 
