@@ -1,9 +1,8 @@
 ---
 layout: post
 title: What versions of JBoss and Weblogic can TA support?
-categories: FAQ
+categories: General
 author: Niall Horgan
-meta: Appservers
 ---
 As of the date above, TA supports runtime migrations from these Java EE servers:
 
