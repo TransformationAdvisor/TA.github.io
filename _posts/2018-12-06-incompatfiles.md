@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Error during upload - INCOMPATIBLE FILES DETECTED
-categories: Datacollector_Upload
+categories: Upload
 author: Niall Horgan
 ---
 
