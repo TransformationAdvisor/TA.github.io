@@ -1,9 +1,8 @@
 ---
 layout: post
 title: You say you support JBoss and Weblogic, what does that mean exactly?
-categories: FAQ
+categories: General
 author: Niall Horgan
-meta: Datacollector
 ---
 
 The TA data collector tool scans for known issues in applications that are migrated from WebLogic Server and JBoss Application Server to WebSphere Application Server. Where possible, a quick fix is provided to change your code to a more portable solution. 
