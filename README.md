@@ -9,9 +9,9 @@ At the top of the md file you must have this block and the rest can be whatever 
 ````
 ---
 layout: post
-title: Descrieb what this FAQ will answer
-categories: Datacollector
-author: optional
+title: <Describe here what the question is>
+categories: <what area this FAQ is relevant to>
+author: <optional>
 ---
  
 bla bla bla
