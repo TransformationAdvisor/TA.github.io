@@ -21,6 +21,8 @@ The DC will stop executing and throw an error if any of the options of custom co
 
 
 DOS AND DON'TS WHILE WRITING THE CUSTOM COMMAND OPTIONS.
+
+
 ''''
 1- Don't give --format option. This is because TA server expects both html and json formats for each report. Generating only one report format may introduce errors while uploading and presenting the results. 
 
