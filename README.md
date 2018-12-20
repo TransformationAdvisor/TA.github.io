@@ -46,3 +46,4 @@ Installation
 ````
 
 If your FAQ doesn't fit in any of these please feel free to use a new one.
+Once happy, submit a pull request and it will be reviewed and published if appropriate.
