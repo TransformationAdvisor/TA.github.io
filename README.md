@@ -31,3 +31,18 @@ Help is available on our slack channel Go here to register :
 https://slack-invite-ibm-cloud-tech.mybluemix.net/
 ````
 
+The string you use for Category can be any of the following :
+
+````
+Datacollector
+Upload
+Download
+General
+IKS
+MQ
+Websphere
+Migration
+Installation
+````
+
+If your FAQ doesn't fit in any of these please feel free to use a new one.
