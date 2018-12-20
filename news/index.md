@@ -2,6 +2,15 @@
 layout: page
 title: What's New
 ---
+**December 14, 2018** Transformation Advisor 1.9.1 released.
+
+     - Configurable heap sizes for analysis of large systems
+     - Support for -java-home parameter
+     - Support for execution as user other than wsadmin owner
+     - Improved handling of SOAP Timeout issues
+     - Improved robustness of handling outside file locations
+     - Improved handling of unexpected files during upload
+
 **November 21, 2018** Transformation Advisor 1.9.0 released.
 
     - IBM MQ
