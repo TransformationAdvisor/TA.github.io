@@ -45,7 +45,10 @@ a:visited { color: #205caa; }
   border-top: 5px solid #333;
   border-bottom: 1px solid #e8e8e8;
   min-height: 56px;
-  background-color: blue;
+  background-color: #000000;
+  background-image: url(https://www.ibm.com/cloud-computing/images/solution-leadspace.jpg); 
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 .site-title,
