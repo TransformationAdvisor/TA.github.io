@@ -2,6 +2,25 @@
 layout: page
 title: What's New
 ---
+
+**February 14th, 2019** Transformation Advisor 1.9.3 released.
+
+	- Data Collector Enhancements
+	- Data Collector collects in English language locale to resolve locale based issues
+	- MQ producers are now detected and matched for WAS applications
+
+**February 4th, 2019** Transformation Advisor 1.9.2 released.
+
+	- Data Collector Enhancements
+	- Static and dynamic dependency information is now collected
+	- Analysis Enhancements
+	- Analysis includes the relationships between Applications and Shared Libraries
+	- Analysis includes the relationships between Applications and MQ QueueManagers
+	- Migration Enhancements
+	- Required Shared Libraries are identified during migration
+	- Binaries can be sourced from a Maven repository during migration
+	- Migrated applications use the latest CloudPak Liberty Helm charts
+
 **December 14, 2018** Transformation Advisor 1.9.1 released.
 
      - Configurable heap sizes for analysis of large systems
