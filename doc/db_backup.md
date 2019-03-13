@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Backup and Restore
+title:
 ---
 ## **How to backup/restore data in the TA DB**
 
