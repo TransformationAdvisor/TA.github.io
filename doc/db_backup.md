@@ -1,5 +1,4 @@
-
-## How to backup/restore data
+# How to backup and restore data in the Transformation Advisor Database
 
 ### Transformation Advisor version is the same
 1. Create a copy of the folder containing the data
@@ -12,22 +11,22 @@
 1. Restart Server Container
 
 
-## How to locate the data
+# How to locate the data
 
-### Dynamic provisioning (GlusterFS)
+#### Dynamic provisioning (GlusterFS)
 ```bash
 kubectl describe pv <pv-name>
 ``` 
 Use **Source:Path** value to locate the data on the disk where it is stored.   
 
-### NFS PV
+#### NFS PV
 ```bash
 kubectl describe pv <pv-name>
 ``` 
 Use **Source:Path** value to locate the data on the disk where it is stored.   
 Default in the Readme is set to **/opt/couchdb/data** and can be reset while NFS PV is created.
 
-### Hostpath PV
+#### Hostpath PV
 ```bash
 kubectl describe pv <pv-name>
 ``` 
