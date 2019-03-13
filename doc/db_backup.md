@@ -1,8 +1,9 @@
-# How to backup/restore data on the same Transformation Advisor version
+# How to backup/restore data
+### Transformation Advisor version is the same
 1. Create a copy of the folder containing the data
 1. Put the contents of the old data folder into new data folder
 
-# How to backup/restore data on Transformation Advisor upgrade/reinstall
+### Transformation Advisor upgrade/reinstall
 1. Create a copy of the folder containing the data
 1. Reinstall or upgrade Transformation Advisor
 1. Put the contents of the old data folder into new data folder
