@@ -8,5 +8,6 @@ Below you will find links to online resources and documentation relating to Tran
 - [Installing Transformation Advisor on ICP](https://developer.ibm.com/recipes/tutorials/deploying-transformation-advisor-into-ibm-cloud-private/)
 - [Running Transformation Advisor](https://developer.ibm.com/recipes/tutorials/using-the-transformation-advisor-on-ibm-cloud-private/)
 - [Integrating with Microclimate to migrate an app to ICP using TA](https://developer.ibm.com/recipes/tutorials/transformation-advisor/)
+- [How to backup and restore your TA database] (./db_backup.md)
 - [Code pattern with video and blog describing how to analyse and modernize an application using TA](https://developer.ibm.com/patterns/app-modernization-transformation-advisor-cloud-private/)
 - [IBM Cloud Transformation Advisor considerations for GDPR readiness](./gdpr.md)
