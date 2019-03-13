@@ -1,5 +1,6 @@
 
-# How to backup/restore data
+## How to backup/restore data
+
 ### Transformation Advisor version is the same
 1. Create a copy of the folder containing the data
 1. Put the contents of the old data folder into new data folder
@@ -11,7 +12,7 @@
 1. Restart Server Container
 
 
-# How to locate the data
+## How to locate the data
 
 ### Dynamic provisioning (GlusterFS)
 ```bash
