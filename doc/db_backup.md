@@ -1,6 +1,5 @@
 
-# 
-## How to backup/restore data in the Transformation Advisor DB
+## **How to backup/restore data in the Transformation Advisor DB**
 
 ### Transformation Advisor version is the same
 1. Create a copy of the folder containing the data
@@ -13,7 +12,7 @@
 1. Restart Server Container
 
 
-##  How to locate the data
+##  **How to locate the data**
 
 ### Dynamic provisioning (GlusterFS)
 ```bash
