@@ -1,5 +1,8 @@
-
-## **How to backup/restore data in the Transformation Advisor DB**
+---
+layout: page
+title: Backup and Restore
+---
+## **How to backup/restore data in the TA DB**
 
 ### Transformation Advisor version is the same
 1. Create a copy of the folder containing the data
