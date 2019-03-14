@@ -1,0 +1,16 @@
+---
+layout: post
+title: Your version of Java does not support TLS 1.2
+categories: Datacollector
+author: Paul Barry
+---
+
+When Data Collection has been completed the results are uploaded to Transformation Advisor
+If you are using an older version of Java6 it may not support TLS1.2, which is required for connection
+
+It is recommended that you manually upload the zip result files via the Transformation Advisor UI
+
+Alternativel you can:
+ - Rerun the command using the -java-home param and point to the JRE provided in the Data Collector
+ - Upgrade to Oracle Java 1.6.0_181-b10 or newer
+ - Upgrade to IBM Java 6.0.16.40 or newer
