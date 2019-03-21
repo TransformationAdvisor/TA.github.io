@@ -7,32 +7,42 @@ title: Configure TransformationAdvisor to use customer certificates
 
 (1) Create a certificate and key. You can skip this step, if you already have a certificate and its key.
 
- + You can create a certificate and a key using this command: `openssl req -new -x509 -key ca.key -out ca.crt`
- + Here is an example defined the _commonName_ and _organisation_; Create a key called `ca.key`, and certificated called `ca.crt`:
+ + You can create a certificate and a key using this command: **openssl req -new -x509 -key ca.key -out ca.crt**
+ + Here is an example defined the _commonName_ and _organisation_; Create a key called **ca.key**, and certificated called **ca.crt**:
  
- ```$xslt
+{% highlight ruby %}
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
         -out ca.crt \
         -keyout ca.key \
         -subj "/CN=ta-dev-icp-proxy-1.rtp.raleigh.ibm.com/O=TA"
-```
+{% endhighlight %}
 
-(2) Create a `tls` type secret: `kubectl create secret tls ta-tls-secret --key ca.key --cert ca.crt`
-
+(2) Create a **tls** type secret: 
+{% highlight ruby %}
+kubectl create secret tls ta-tls-secret --key ca.key --cert ca.crt
+{% endhighlight %}
  + Assumed you run the command at the same working directory of the ca.key and ca.crt files.
  + Create a secret named `ta-tls-secret`
 
 (3) Add new return url to OIDC registration:
 
-`curl -kv -X PUT -u oauthadmin:$OAUTH2_CLIENT_REGISTRATION_SECRET -H "Content-Type: application/json" --data @oidc-registration.json https://$ICP_MASTER_IP:9443/oidc/endpoint/OP/registration/$TA_CLIENT_ID`
-
- + You can get your TA's OIDC file by running: `curl -kv -X GET -u oauthadmin:$OAUTH2_CLIENT_REGISTRATION_SECRET -H "Content-Type: application/json" https://$ICP_MASTER_IP:9443/oidc/endpoint/OP/registration/$TA_CLIENT_ID`
- + Sample json file to be sent below.
+{% highlight ruby %}
+curl -kv -X PUT -u oauthadmin:$OAUTH2_CLIENT_REGISTRATION_SECRET -H "Content-Type: application/json" --data @oidc-registration.json https://$ICP_MASTER_IP:9443/oidc/endpoint/OP/registration/$TA_CLIENT_ID
+{% endhighlight %}
+ + You can get your TA's OIDC file by running: 
+ {% highlight ruby %}
+ curl -kv -X GET -u oauthadmin:$OAUTH2_CLIENT_REGISTRATION_SECRET -H "Content-Type: application/json" https://$ICP_MASTER_IP:9443/oidc/endpoint/OP/registration/$TA_CLIENT_ID
+{% endhighlight %}
  + In short, is to add `https://$YOUR_DOMAIN_DEFINED_IN_COMMON_NAME:443` and similar suffix/path to each of the fields having the proxy IP.
  + 433 port is significant, unless you mapped 443 to other ports in your ICP.
- + OAUTH2_CLIENT_REGISTRATION_SECRET can be get from: `kubectl get secret platform-oidc-credentials -o yaml -n kube-system`. The value of OAUTH2_CLIENT_REGISTRATION_SECRET is base64 encoded, thus, you need to decode: `base64 --decode <<< value`
+ + OAUTH2_CLIENT_REGISTRATION_SECRET can be get from: 
+ {% highlight ruby %}
+ kubectl get secret platform-oidc-credentials -o yaml -n kube-system
+{% endhighlight %}
 
-```
+ The value of OAUTH2_CLIENT_REGISTRATION_SECRET is base64 encoded, thus, you need to decode: **base64 --decode <<< value**
+
+{% highlight ruby %}
 {
   "token_endpoint_auth_method": "client_secret_basic",
   "client_id": "$TA_CLIENT_ID",
@@ -70,10 +80,11 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
     "https://$TA_INGRESS_IP:443/$TA_RELEASE_NAME-ui/icp/auth/callback"
   ]
 }
-```
+{% endhighlight %}
  + The example below use _ta-dev-icp-proxy-1.rtp.raleigh.ibm.com_ as the domain name; _ta-test_ as TA's helm release name; 
  _9.42.29.103_ has Ingress IP; _9.42.23.152_ as master IP.
-```
+ 
+{% highlight ruby %}
 {
   "token_endpoint_auth_method": "client_secret_basic",
   "client_id": "$TA_CLIENT_ID",
@@ -112,19 +123,20 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
     "https://9.42.29.103:443/ta-test-ui/icp/auth/callback"
   ]
 }
-```
+{% endhighlight %}
 
-(4) Backup TA's Ingress yaml. You can run `kubectl get ingress ta-test-ibm-transadv-dev-ingress -o yaml`, copy and paste the results to a text file. 
-  + Assumed you have TA helm release called `ta-test`, then your TA's Ingress is `ta-test-ibm-transadv-dev-ingress`. You can always find it at `kubectl get ingress`
+(4) Backup TA's Ingress yaml. You can run **kubectl get ingress ta-test-ibm-transadv-dev-ingress -o yaml**, copy and paste the results to a text file. 
+  + Assumed you have TA helm release called **ta-test**, then your TA's Ingress is **ta-test-ibm-transadv-dev-ingress**. You can always find it at **kubectl get ingress**
   + Note: indention is significant. 
-(5) Delete the TA's Ingress yaml. [Read the note below before proceeding] `kubectl delete ingress ta-test-ibm-transadv-dev-ingress`.
-  + **NOTE: you can try to edit the ingress without deleting it: `kubectl edit ingress ta-test-ibm-transadv-dev-ingress` but it gives inconsistent results i.e. failed to swap certificate most of the time.**
+(5) Delete the TA's Ingress yaml. [Read the note below before proceeding] **kubectl delete ingress ta-test-ibm-transadv-dev-ingress**.
+  + **NOTE: you can try to edit the ingress without deleting it: **kubectl edit ingress ta-test-ibm-transadv-dev-ingress** but it gives inconsistent results i.e. failed to swap certificate most of the time.
+  
 (6) If you deleted the Ingress, then update the ingress file, you backed up at step 4:
-  + Added `host` under `rules`
-  + Added `tls` under `spec`
-  + The host value shall be the same as the `commonName` in the certificate stored in the secret. 
-  + In my test environment, I did not make `IP` worked as `commonName` and `host`
-  + The example below, I have host value of `ta-dev-icp-proxy-1.rtp.raleigh.ibm.com` and from secrete `ta-tls-secret`
+  + Added **host** under **rules**
+  + Added **tls** under **spec**
+  + The host value shall be the same as the **commonName** in the certificate stored in the secret. 
+  + In my test environment, I did not make **IP** worked as **commonName** and **host**
+  + The example below, I have host value of **ta-dev-icp-proxy-1.rtp.raleigh.ibm.com** and from secrete **ta-tls-secret**
 ```
 spec:
   rules:
@@ -144,16 +156,20 @@ spec:
     - ta-dev-icp-proxy-1.rtp.raleigh.ibm.com
     secretName: ta-tls-secret
 ```
-(7) Save the ingress file and go to the file directory, and run. `kubectl apply -f $PATH_TO_INGRESS_FILE/ta-igress.yaml`
-  + The example I saved the file named `ta-igress.yaml`
-  + Here is an example absolute path (`$PATH_TO_INGRESS_FILE/ta-igress.yaml`) `/Users/ibm/Downloads/ta-igress.yaml` pointing to the file
-(8) Test the ingress: `kubectl get ingress`
-  + If you see, `HOSTS ` with value of `*`, you need to add load balancer to the ingress.
+
+(7) Save the ingress file and go to the file directory, and run. **kubectl apply -f $PATH_TO_INGRESS_FILE/ta-igress.yaml**
+  + The example I saved the file named **ta-igress.yaml**
+  + Here is an example absolute path (**$PATH_TO_INGRESS_FILE/ta-igress.yaml**) **/Users/ibm/Downloads/ta-igress.yaml** pointing to the file
+(8) Test the ingress: **kubectl get ingress**
+
+  + If you see, **`HOSTS** with value of `*`, you need to add load balancer to the ingress.
+  
 ```
 NAME                                  HOSTS     ADDRESS       PORTS     AGE
 ta-test-ibm-transadv-dev-ingress   *         9.42.29.103   80, 443   2m
 ```
-(9) Add load balancer. Run `kubectl edit ingress ta-test-ibm-transadv-dev-ingress`, and
+
+(9) Add load balancer. Run **kubectl edit ingress ta-test-ibm-transadv-dev-ingress**, and
  + Add/edit to the example below
  + Sample IP 9.42.29.103 is the proxy IP in ICP
 ```
@@ -162,7 +178,7 @@ status:
     ingress:
     - ip: 9.42.29.103
 ```
-(10) Save and exit, re-run: `kubectl get ingress`, you shall see the `HOSTS` now points to your domain:
+(10) Save and exit, re-run: **kubectl get ingress**, you shall see the **HOSTS** now points to your domain:
 
 ```
 NAME                               HOSTS                                    ADDRESS       PORTS     AGE
@@ -173,8 +189,8 @@ ta-test-ibm-transadv-dev-ingress   ta-dev-icp-proxy-1.rtp.raleigh.ibm.com   9.42
 `curl -v -k --resolve $YOUR_DOMAIN_DEFINED_IN_COMMON_NAME:443:$LOAD_BALANCER_IP https://ta-dev-icp-proxy-1.rtp.raleigh.ibm.com`
 
  + Example: `curl -v -k --resolve ta-dev-icp-proxy-1.rtp.raleigh.ibm.com:443:9.42.29.103 https://ta-dev-icp-proxy-1.rtp.raleigh.ibm.com`
- + In the example: `ta-dev-icp-proxy-1.rtp.raleigh.ibm.com` is my domain at port 443 pointing to `9.42.29.103`
- + In the output, you shall see ***  subject: CN=ta-dev-icp-proxy-1.rtp.raleigh.ibm.com; O=TA**
+ + In the example: **ta-dev-icp-proxy-1.rtp.raleigh.ibm.com** is my domain at port 443 pointing to **9.42.29.103**
+ + In the output, you shall see ***subject: CN=ta-dev-icp-proxy-1.rtp.raleigh.ibm.com; O=TA**
 
 ```
 * Added ta-dev-icp-proxy-1.rtp.raleigh.ibm.com:443:9.42.29.103 to DNS cache
