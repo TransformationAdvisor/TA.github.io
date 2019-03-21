@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Configuring Ingress to use your own CA certificate
+title: Configure migrated applications to use custom certificates
 ---
 
 For Liberty applications deployed through TA, when Ingress is enabled, Ingress generates a self-signed certificate and key pair that is used to access the application externally via https. 
