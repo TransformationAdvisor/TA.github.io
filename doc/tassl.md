@@ -27,11 +27,15 @@ kubectl create secret tls ta-tls-secret --key ca.key --cert ca.crt
 (3) Add new return url to OIDC registration:
 
 {% highlight ruby %}
-curl -kv -X PUT -u oauthadmin:$OAUTH2_CLIENT_REGISTRATION_SECRET -H "Content-Type: application/json" --data @oidc-registration.json https://$ICP_MASTER_IP:9443/oidc/endpoint/OP/registration/$TA_CLIENT_ID
+curl -kv -X PUT -u oauthadmin:$OAUTH2_CLIENT_REGISTRATION_SECRET -H 
+"Content-Type: application/json" --data @oidc-registration.json 
+https://$ICP_MASTER_IP:9443/oidc/endpoint/OP/registration/$TA_CLIENT_ID
 {% endhighlight %}
  + You can get your TA's OIDC file by running: 
  {% highlight ruby %}
- curl -kv -X GET -u oauthadmin:$OAUTH2_CLIENT_REGISTRATION_SECRET -H "Content-Type: application/json" https://$ICP_MASTER_IP:9443/oidc/endpoint/OP/registration/$TA_CLIENT_ID
+ curl -kv -X GET -u oauthadmin:$OAUTH2_CLIENT_REGISTRATION_SECRET -H 
+ "Content-Type: application/json" 
+ https://$ICP_MASTER_IP:9443/oidc/endpoint/OP/registration/$TA_CLIENT_ID
 {% endhighlight %}
  + In short, is to add `https://$YOUR_DOMAIN_DEFINED_IN_COMMON_NAME:443` and similar suffix/path to each of the fields having the proxy IP.
  + 433 port is significant, unless you mapped 443 to other ports in your ICP.
@@ -162,10 +166,10 @@ spec:
   + Here is an example absolute path (**$PATH_TO_INGRESS_FILE/ta-igress.yaml**) **/Users/ibm/Downloads/ta-igress.yaml** pointing to the file
 (8) Test the ingress: **kubectl get ingress**
 
-  + If you see, **`HOSTS** with value of `*`, you need to add load balancer to the ingress.
+  + If you see, **HOSTS** with value of *****, you need to add load balancer to the ingress.
   
 ```
-NAME                                  HOSTS     ADDRESS       PORTS     AGE
+NAME                               HOSTS     ADDRESS       PORTS     AGE
 ta-test-ibm-transadv-dev-ingress   *         9.42.29.103   80, 443   2m
 ```
 
@@ -186,9 +190,16 @@ ta-test-ibm-transadv-dev-ingress   ta-dev-icp-proxy-1.rtp.raleigh.ibm.com   9.42
 ```
 
 (11) Test certificate on the Ingress itself: 
-`curl -v -k --resolve $YOUR_DOMAIN_DEFINED_IN_COMMON_NAME:443:$LOAD_BALANCER_IP https://ta-dev-icp-proxy-1.rtp.raleigh.ibm.com`
+{% highlight ruby %}
+curl -v -k --resolve $YOUR_DOMAIN_DEFINED_IN_COMMON_NAME:443:$LOAD_BALANCER_IP 
+https://ta-dev-icp-proxy-1.rtp.raleigh.ibm.com
+{% endhighlight %}
 
- + Example: `curl -v -k --resolve ta-dev-icp-proxy-1.rtp.raleigh.ibm.com:443:9.42.29.103 https://ta-dev-icp-proxy-1.rtp.raleigh.ibm.com`
+ + Example: 
+ {% highlight ruby %}
+ curl -v -k --resolve ta-dev-icp-proxy-1.rtp.raleigh.ibm.com:443:9.42.29.103 
+ https://ta-dev-icp-proxy-1.rtp.raleigh.ibm.com
+ {% endhighlight %}
  + In the example: **ta-dev-icp-proxy-1.rtp.raleigh.ibm.com** is my domain at port 443 pointing to **9.42.29.103**
  + In the output, you shall see ***subject: CN=ta-dev-icp-proxy-1.rtp.raleigh.ibm.com; O=TA**
 
