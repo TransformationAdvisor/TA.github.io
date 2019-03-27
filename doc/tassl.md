@@ -148,6 +148,7 @@ spec:
 (7) Save the ingress file and go to the file directory, and run. `kubectl apply -f $PATH_TO_INGRESS_FILE/ta-igress.yaml`
   + The example I saved the file named `ta-igress.yaml`
   + Here is an example absolute path (`$PATH_TO_INGRESS_FILE/ta-igress.yaml`) `/Users/ibm/Downloads/ta-igress.yaml` pointing to the file
+  
 (8) Test the ingress: `kubectl get ingress`
   + If you see, `HOSTS ` with value of `*`, you need to add load balancer to the ingress.
 ```
