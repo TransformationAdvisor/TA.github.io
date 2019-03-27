@@ -79,8 +79,9 @@ EOF
  _9.42.23.yyy_ has Ingress IP; _9.42.23.xxx_ as master IP. Saved as oidc-registration.json.
 + If you already have an oidc-registration.json with actual values, you can run the following command from the same working directory as the file:
 
-```curl -kv -X PUT -u oauthadmin:$OAUTH2_CLIENT_REGISTRATION_SECRET -H "Content-Type: application/json" --data @oidc-registration.json https://$ICP_MASTER_IP:9443/oidc/endpoint/OP/registration/$TA_CLIENT_ID
-{
+**curl -kv -X PUT -u oauthadmin:$OAUTH2_CLIENT_REGISTRATION_SECRET -H "Content-Type: application/json" --data @oidc-registration.json https://$ICP_MASTER_IP:9443/oidc/endpoint/OP/registration/$TA_CLIENT_ID**
+
+```{
   "token_endpoint_auth_method": "client_secret_basic",
   "client_id": "$TA_CLIENT_ID",
   "client_secret": "$TA_CLIENT_SECRET",
@@ -121,7 +122,7 @@ EOF
 ```
 
 (4) Backup TA's Ingress yaml. You can run **kubectl get ingress ta-test-ibm-transadv-dev-ingress -o yaml**, copy and paste the results to a text file. 
-  + Assumed you have TA helm release called `ta-test`, then your TA's Ingress is **ta-test-ibm-transadv-dev-ingress**. You can always find it at **kubectl get ingress**
+  + Assumed you have TA helm release called **ta-test**, then your TA's Ingress is **ta-test-ibm-transadv-dev-ingress**. You can always find it at **kubectl get ingress**
   + Note: indention is significant. 
   
 (5) Delete the TA's Ingress yaml. [Read the note below before proceeding] **kubectl delete ingress ta-test-ibm-transadv-dev-ingress**.
