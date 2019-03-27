@@ -7,8 +7,7 @@ For Liberty applications deployed through TA, when Ingress is enabled, Ingress g
 
 It is possible to configure Ingress to use your own CA certificate and key pair using these steps:
 
-(1) Use the kubectl CLI to create a secret containing the TLS certificate and key pair. 
-    The certificate and key pair files are referenced directly without encoding them in base64 first.
+(1) Use the kubectl CLI to create a secret containing the TLS certificate and key pair. The certificate and key pair files are referenced directly without encoding them in base64 first. Replace ta.crt and ta.key in the command below with your CA certificate and key pair.
     
     kubectl create secret tls ta-tls-ca-key-pair --key ./ta.key --cert ./ta.crt
 
