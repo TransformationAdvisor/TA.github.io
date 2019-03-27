@@ -5,47 +5,26 @@ title: Configure TransformationAdvisor to use customer certificates
 
 ### These instructions assume you have TA installed with Ingress.
 
-(1) Create a certificate and key. You can skip this step, if you already have a certificate and its key.
-
- + You can create a certificate and a key using this command: **openssl req -new -x509 -key ca.key -out ca.crt**
- + Here is an example defined the _commonName_ and _organisation_; Create a key called **ca.key**, and certificated called **ca.crt**:
- 
-{% highlight ruby %}
+(1) Create a certificate and key. You can skip step 1, if you already have a certificate and its key.
+ + You can create a certificate and a key using this command: `openssl req -new -x509 -key ca.key -out ca.crt`
+ + Here is an example defined the _commonName_ and _organisation_; Create a key called `ca.key`, and certificated called `ca.crt`:
+ ```$xslt
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
         -out ca.crt \
         -keyout ca.key \
-        -subj "/CN=ta-dev-icp-proxy-1.rtp.raleigh.ibm.com/O=TA"
-{% endhighlight %}
+        -subj "/CN=example.com/O=TA"
+```
 
-(2) Create a **tls** type secret: 
-{% highlight ruby %}
-kubectl create secret tls ta-tls-secret --key ca.key --cert ca.crt
-{% endhighlight %}
+(2) Create a `tls` type secret: `kubectl create secret tls ta-tls-secret --key ca.key --cert ca.crt`
  + Assumed you run the command at the same working directory of the ca.key and ca.crt files.
  + Create a secret named `ta-tls-secret`
 
 (3) Add new return url to OIDC registration:
-
-{% highlight ruby %}
-curl -kv -X PUT -u oauthadmin:$OAUTH2_CLIENT_REGISTRATION_SECRET -H 
-"Content-Type: application/json" --data @oidc-registration.json 
-https://$ICP_MASTER_IP:9443/oidc/endpoint/OP/registration/$TA_CLIENT_ID
-{% endhighlight %}
- + In the sample oidc-registration.json file to be sent below, in short, is to add https://$YOUR_DOMAIN_DEFINED_IN_COMMON_NAME:443 and similar suffix/path to each of the fields having the proxy IP.  
- {% highlight ruby %}
- curl -kv -X GET -u oauthadmin:$OAUTH2_CLIENT_REGISTRATION_SECRET -H 
- "Content-Type: application/json" 
- https://$ICP_MASTER_IP:9443/oidc/endpoint/OP/registration/$TA_CLIENT_ID
-{% endhighlight %}
- + In short, is to add `https://$YOUR_DOMAIN_DEFINED_IN_COMMON_NAME:443` and similar suffix/path to each of the fields having the proxy IP.
+ + You can get your TA's OIDC json (referenced as _oidc-registration.json_ below) by running: `curl -kv -X GET -u oauthadmin:$OAUTH2_CLIENT_REGISTRATION_SECRET -H "Content-Type: application/json" https://$ICP_MASTER_IP:9443/oidc/endpoint/OP/registration/$TA_CLIENT_ID`
+ + In the sample oidc-registration.json file to be sent below, in short, is to add `https://$YOUR_DOMAIN_DEFINED_IN_COMMON_NAME:443` and similar suffix/path to each of the fields having the proxy IP.
  + 433 port is significant, unless you mapped 443 to other ports in your ICP.
- + OAUTH2_CLIENT_REGISTRATION_SECRET can be get from: 
- {% highlight ruby %}
- kubectl get secret platform-oidc-credentials -o yaml -n kube-system
-{% endhighlight %}
-
- The value of OAUTH2_CLIENT_REGISTRATION_SECRET is base64 encoded, thus, you need to decode: `base64 --decode <<< value`
-
+ + OAUTH2_CLIENT_REGISTRATION_SECRET can be get from: `kubectl get secret platform-oidc-credentials -o yaml -n kube-system`. The value of OAUTH2_CLIENT_REGISTRATION_SECRET is base64 encoded, thus, you need to decode: `base64 --decode <<< value`
+ `base64 --decode <<< value`
 
 ```
 curl -kv -X PUT -u oauthadmin:$OAUTH2_CLIENT_REGISTRATION_SECRET -H "Content-Type: application/json" https://$ICP_MASTER_IP:9443/oidc/endpoint/OP/registration/$TA_CLIENT_ID --data @<(cat <<EOF
@@ -92,9 +71,8 @@ EOF
  + The example below use _example.com_ as the domain name; _ta-test_ as TA's helm release name; 
  _9.42.23.yyy_ has Ingress IP; _9.42.23.xxx_ as master IP. Saved as oidc-registration.json.
 + If you already have an oidc-registration.json with actual values, you can run the following command from the same working directory as the file:
-`curl -kv -X PUT -u oauthadmin:$OAUTH2_CLIENT_REGISTRATION_SECRET -H "Content-Type: application/json" --data @oidc-registration.json https://$ICP_MASTER_IP:9443/oidc/endpoint/OP/registration/$TA_CLIENT_ID`
 
-```
+```curl -kv -X PUT -u oauthadmin:$OAUTH2_CLIENT_REGISTRATION_SECRET -H "Content-Type: application/json" --data @oidc-registration.json https://$ICP_MASTER_IP:9443/oidc/endpoint/OP/registration/$TA_CLIENT_ID
 {
   "token_endpoint_auth_method": "client_secret_basic",
   "client_id": "$TA_CLIENT_ID",
@@ -135,12 +113,14 @@ EOF
 }
 ```
 
-4. Backup TA's Ingress yaml. You can run `kubectl get ingress ta-test-ibm-transadv-dev-ingress -o yaml`, copy and paste the results to a text file. 
+(4) Backup TA's Ingress yaml. You can run `kubectl get ingress ta-test-ibm-transadv-dev-ingress -o yaml`, copy and paste the results to a text file. 
   + Assumed you have TA helm release called `ta-test`, then your TA's Ingress is `ta-test-ibm-transadv-dev-ingress`. You can always find it at `kubectl get ingress`
   + Note: indention is significant. 
-5. Delete the TA's Ingress yaml. [Read the note below before proceeding] `kubectl delete ingress ta-test-ibm-transadv-dev-ingress`.
+  
+(5) Delete the TA's Ingress yaml. [Read the note below before proceeding] `kubectl delete ingress ta-test-ibm-transadv-dev-ingress`.
   + **NOTE: you can try to edit the ingress without deleting it: `kubectl edit ingress ta-test-ibm-transadv-dev-ingress` but it gives inconsistent results i.e. failed to swap certificate most of the time.**
-6. If you deleted the Ingress, then update the ingress file, you backed up at step 4:
+  
+(6) If you deleted the Ingress, then update the ingress file, you backed up at step 4:
   + Added `host` under `rules`
   + Added `tls` under `spec`
   + The host value shall be the same as the `commonName` in the certificate stored in the secret. 
@@ -165,10 +145,10 @@ spec:
     - example.com
     secretName: ta-tls-secret
 ```
-7. Save the ingress file and go to the file directory, and run. `kubectl apply -f $PATH_TO_INGRESS_FILE/ta-igress.yaml`
+(7) Save the ingress file and go to the file directory, and run. `kubectl apply -f $PATH_TO_INGRESS_FILE/ta-igress.yaml`
   + The example I saved the file named `ta-igress.yaml`
   + Here is an example absolute path (`$PATH_TO_INGRESS_FILE/ta-igress.yaml`) `/Users/ibm/Downloads/ta-igress.yaml` pointing to the file
-8. Test the ingress: `kubectl get ingress`
+(8) Test the ingress: `kubectl get ingress`
   + If you see, `HOSTS ` with value of `*`, you need to add load balancer to the ingress.
 ```
 NAME                                  HOSTS     ADDRESS       PORTS     AGE
@@ -179,7 +159,7 @@ ta-test-ibm-transadv-dev-ingress   *         9.42.23.yyy   80, 443   2m
 NAME                               HOSTS                                    ADDRESS   PORTS     AGE
 ta-test-ibm-transadv-dev-ingress   example.com             80, 443   8s
 ```
-9. Add/remove load balancer. Run `kubectl edit ingress ta-test-ibm-transadv-dev-ingress`, and
+(9) Add/remove load balancer. Run `kubectl edit ingress ta-test-ibm-transadv-dev-ingress`, and
  + Add/edit to the example below
  + Sample IP 9.42.23.yyy is the proxy IP in ICP
 ```
@@ -188,14 +168,14 @@ status:
     ingress:
     - ip: 9.42.23.yyy
 ```
-10. Save and exit, re-run: `kubectl get ingress`, you shall see the `HOSTS` now points to your domain:
+(10) Save and exit, re-run: `kubectl get ingress`, you shall see the `HOSTS` now points to your domain:
 
 ```
 NAME                                      HOSTS                                    ADDRESS       PORTS     AGE
 ta-test-ibm-transadv-dev-ingress   example.com   9.42.23.yyy   80, 443   56s
 ```
 
-11. Test certificate on the Ingress itself: 
+(11) Test certificate on the Ingress itself: 
 `curl -v -k --resolve $YOUR_DOMAIN_DEFINED_IN_COMMON_NAME:443:$LOAD_BALANCER_IP https://example.com`
 
  + Example: `curl -v -k --resolve example.com:443:9.42.23.yyy https://example.com`
@@ -252,6 +232,3 @@ ta-test-ibm-transadv-dev-ingress   example.com   9.42.23.yyy   80, 443   56s
 < 
 * Connection #0 to host example.com left intact
 ```
-12. You can also tested on UI app. This test the UI Ingress path's certificate:
- + You may need to remove browser cache.
-<img width="1020" alt="screenshot 2019-03-20 at 0 08 05" src="https://media.github.ibm.com/user/8257/files/e0eb7800-4aa8-11e9-9de9-917f6f01b6c8">
