@@ -2,7 +2,7 @@
 layout: page
 title: What's New
 ---
-**March 29th, 2019** Transformation Advisor 1.9.4 released.
+**March 29th, 2019** Transformation Advisor 1.9.4 released. Refer to the README for upgrade/install instructions
 
 	- Analysis now displays relationships between Applications and Shared Libraries/MQ QueueManagers even if these targets have not been scanned
 	- Support for collection, analysis, of Apache Tomcat installations and applications
