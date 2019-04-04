@@ -2,7 +2,23 @@
 layout: page
 title: What's New
 ---
+**March 29th, 2019** Transformation Advisor 1.9.4 released.
 
+	- Analysis now displays relationships between Applications and Shared Libraries/MQ QueueManagers even if these targets have not been scanned
+	- Support for collection, analysis, of Apache Tomcat installations and applications
+	- Support for data collection on AIX systems without the need for bash to be installed
+	- Enhanced support for WAS ND configuration on data collection including notifications when ...
+		o shared libraries are referenced by applications but do not exist on the machine being scanned
+		o a managed node is being scanned to ensure that it is the most appropriate location for the scan
+	- Data Collector prompts for username/password if not provided (no need to specify them on the command line)
+	- Support in the Data Collector for the --exclude-files parameter to exclude irrelevant large files that are impacting performance
+	- Support for the --verbose parameter in the Data Collector to help trouble shoot any scanning issues
+	- Data Collector defaulting to the Java that traditional WebSphere uses when it is appropriate to do so
+	- Data Collector now uses the binaryScanner v19.0.0.2
+	- Liberty Helm charts for migrated applications are now configured automatically to use Ingress in ICP when the original application has only a single context route
+	- Instructions are now provided for migrating to traditional WebSphere base running on containers
+	- Transformation Advisor now supports the definition of a public facing proxy with private masters and nodes in ICP
+	
 **February 14th, 2019** Transformation Advisor 1.9.3 released.
 
 	- Data Collector Enhancements
