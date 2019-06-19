@@ -1,7 +1,7 @@
 ---
 layout: page
 ---
-
+![](/assets/light.png)
 IBM Cloud Transformation Advisor helps you plan, prioritize, and package your on-premises workloads for modernization on IBM Cloud and IBM Cloud Private.  
 
 IBM Cloud Transformation Advisor will...
