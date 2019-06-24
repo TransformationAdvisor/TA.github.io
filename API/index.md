@@ -27,5 +27,4 @@ This value can be added to the command, and then the command run manually to tes
 To access the APIs you will need to use an API Key, the process for creating this can be found [here](./APIKey_creation_in_ICP.md)
 
 ## API REST client
-To easily integrate IBM CloudTransformation Advisor APIs into your product or tool an open source TA REST client is being developed.    
-More details to follow shortly.
+To easily integrate IBM Cloud Transformation Advisor APIs into your product or tool an open source TA REST client is being developed. More details to follow shortly.
