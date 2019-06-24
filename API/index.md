@@ -10,7 +10,7 @@ The APIs are compliant with OpenAPI specification 3.0
 The swagger documentation for the APIs are available from your IBM Cloud Transformation Advisor install at this location: `<TA_SERVER>/api/`   
 An interactive UI for these APIs can be found at: `<TA_SERVER>/api/explorer/`
 
-### Finding the <TA_SEVER> value    
+### Finding the `<TA_SEVER>` value    
 The `<TA_SERVER>` value can be found from the IBM Cloud Private UI using the following steps:
 1. Launch IBM Cloud Private Console UI
 1. Navigation to the IBM Cloud Transformation Advisor Helm release
