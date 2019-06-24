@@ -3,8 +3,6 @@ layout: page
 title: API key creation in IBM Cloud private
 ---
 
-# API key creation in IBM Cloud Private
-
 When IBM Cloud Transformation Advisor is running in IBM Cloud Private it is recommended that you have ingress enabled.    
 With ingress enabled all API calls will require authentication.    
 It is recommended that you create an API Key to use for all calls to the IBM Cloud Transformation Advisor APIs. 
