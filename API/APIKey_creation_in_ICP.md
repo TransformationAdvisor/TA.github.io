@@ -5,9 +5,9 @@ title: API key creation in IBM Cloud private
 
 # API key creation in IBM Cloud Private
 
-When Transformation Advisor is running in IBM Cloud Private it is recommended that you have ingress enabled.    
+When IBM Cloud Transformation Advisor is running in IBM Cloud Private it is recommended that you have ingress enabled.    
 With ingress enabled all API calls will require authentication.    
-It is recommended that you create an API Key to use for all calls to the Transformation Advisor APIs. 
+It is recommended that you create an API Key to use for all calls to the IBM Cloud Transformation Advisor APIs. 
 
 The steps below outline how to create an API Key:  
 1. Configure your client to connect to your ICP
@@ -24,6 +24,6 @@ The steps below outline how to create an API Key:
 1. Create an API key bound to your service id
     - `curl -k -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "Authorization: Bearer $ACCESS_TOKEN" -d '{"name": "test_serviceid_apikey","description": "Description for test_serviceid_apikey ","boundTo": "<crn_value>"}' https://<ICP_MASTER_IP>:8443/iam-token/apikeys/`
 1. The JSON object returned will have an attribute called `apiKey`
-1. This `apiKey` value is used in the apiKey field for all Transformation Advisor API calls
+1. This `apiKey` value is used in the apiKey field for all IBM Cloud Transformation Advisor API calls
 
 
