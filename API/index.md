@@ -20,7 +20,7 @@ The <TA_SERVER> value can be found from the IBM Cloud Private UI using the follo
 
 ### Limitations of 'Try it out'
 When running Transformation Advisor in IBM Cloud Private with ingress enabled the 'Try it out' capability will fail on execution.    
-This is becasue the generated curl command is missing the ingress value.    
+This is because the generated curl command is missing the ingress value.    
 This value can be added to the command, and then the command run manually to test the API.    
 
 
