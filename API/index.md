@@ -1,10 +1,12 @@
 ---
 layout: page
-title: APIs
+title: BETA APIs
 ---
-IBM Cloud Transformation Advisor provides access to it's full capabilities via a set of standard REST APIs.    
+IBM Cloud Transformation Advisor provides BETA level access to it's capabilities via a set of standard REST APIs.    
 The APIs are compliant with OpenAPI specification 3.0    
 	
+## BETA release
+The APIs provided here are not yet fully complete and are subject to change. There is no guarantee that future release will support these APIs (IBM Cloud Transformation Advisor is not yet backward compatible in relation to APIs). The good news is that we can and will make changes for you!
 	
 ## API documentation and interactive ui
 The swagger documentation for the APIs are available from your IBM Cloud Transformation Advisor install at this location: `<TA_SERVER>/api/`   
