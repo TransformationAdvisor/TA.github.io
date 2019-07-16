@@ -7,7 +7,7 @@ The APIs are compliant with OpenAPI specification 3.0
 	
 ## BETA release
 The APIs provided here are not yet fully complete and are subject to change.    
-IBM Cloud Transformation Advisor is not yet backward compatible in relation to APIs. There is no guarantee that future release will support these APIs. 
+IBM Cloud Transformation Advisor is not yet backward compatible in relation to APIs. There is no guarantee that future release will support these APIs.    
 The good news is that we can and will make changes for you. Just ask!
 	
 ## API documentation and interactive ui
