@@ -4,7 +4,7 @@ layout: page
 ![](/assets/Light.png)
 
 
-IBM Cloud Transformation Advisor helps you plan, prioritize, and package your on-premises workloads for modernization on IBM Cloud and IBM Cloud Private.  
+IBM Cloud Transformation Advisor helps you plan, prioritize, and package your on-premises workloads for modernization.
 
 IBM Cloud Transformation Advisor will...
 
@@ -12,16 +12,16 @@ IBM Cloud Transformation Advisor will...
 - Analyze your existing middleware deployments and upload the results to the IBM Cloud Transformation Advisor UI with a downloaded data collector
 - Classify your java applications and MQ queue managers as Simple, Moderate or Complex to move.
 - Provide recommendations for cloud migration and modernization as well as an estimated effort to migrate to different platforms
-- Create necessary deployment artifacts to accelerate your migration into IBM Cloud and IBM Cloud Private.
-- In the case of simple applications Transformation Advisor can automatically containerize and deploy the application into Liberty containers running on IBM Cloud Private. 
-- When moving to a virtual machine, replatform and provide easy connection to your cloud environment by using IBM WebSphere Application Server for IBM Cloud Private VM Quickstarter.
+- Create necessary deployment artifacts to accelerate your migration
+- In the case of simple applications Transformation Advisor can automatically containerize and deploy the application into Liberty containers
+- When moving to a virtual machine, replatform and provide easy connection to your cloud environment by using IBM WebSphere Application Server VM Quickstarter.
 
 IBM Cloud Transformation Advisor can scan and analyze the following on-premises workloads....
 
 **Java EE application servers**
 
-- JBoss 4.x - 5.x to Liberty or Full profile
 - WebLogic Server 6.x – 11.x to Liberty or Full profile
+- Apache Tomcat
 - WebSphere Application Server V7.0 (and later) to Liberty or Full profile
 - Java applications directly 
 
