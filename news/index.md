@@ -2,6 +2,45 @@
 layout: page
 title: What's New
 ---
+
+**July 22nd, 2019** 1.9.9: What's New
+
+    - Analysis Enhancements
+        Java applications can now be grouped into business applications to provide a consolidated view of complexity, effort and dependencies
+    - Experimental
+        Creation and deployment of source code projects
+        Provision of BETA level APIs
+
+**June 29th, 2019** 1.9.8: What's New
+
+    - IBM Cloud Private Enhancements
+        Transformation Advisor now supported on IBM Cloud Private on Red Hat™ OpenShift
+
+**June, 2019** 1.9.7: What's New
+
+    - IBM Cloud Private Enhancements
+        Transformation Advisor now working with IBM Cloud Private 3.2
+
+**May 17th, 2019** 1.9.6: What's New
+
+    - Transformation Advisor Local
+        IBM Cloud Transformation Advisor Local Beta can now be installed on laptops
+    - Data Collector Enhancements
+        Data Collection can be executed against a list of specific applications within a WebSphere profile
+        Data Collection can be executed against specified profiles without the need to provide credentials
+    - Analysis Enhancements
+        Shared Libraries are now accessible as a convenient tab alongside applications that use them
+
+**April, 2019** 1.9.5: What's New
+
+    - Data Collector Enhancements
+        Improved robustness when shared library classpath references are missing
+        Prevention of command arguments being written to the log
+    - Migration Enhancements
+        Prevent the inclusion of conflicting servlet features in the server.xml feature list
+    - CloudPak Enhancements
+        Revalidation of CloudPak status for Transformation Advisor
+	
 **March 29th, 2019** Transformation Advisor 1.9.4 released. Refer to the [README](./1.9.4_README.md) for upgrade/install instructions
 
 	- Analysis now displays relationships between Applications and Shared Libraries/MQ 
@@ -100,7 +139,7 @@ title: What's New
 
 **August 23, 2018** Transformation Advisor 1.7.0 released.
 
-    - JBoss and WebLogic Analysis
+    - WebLogic Analysis
     - Instructions for migrating transformed applications to IBM Kubernetes Service
     - Usability Enhancements
     - Data Collector Enhancements
