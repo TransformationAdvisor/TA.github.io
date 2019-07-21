@@ -6,7 +6,8 @@ title: What's New
 **July 22nd, 2019** 1.9.9: What's New
 
     - Analysis Enhancements
-        Java applications can now be grouped into business applications to provide a consolidated view of complexity, effort and dependencies
+        Java applications can now be grouped into business applications to provide a 
+	consolidated view of complexity, effort and dependencies
     - Experimental
         Creation and deployment of source code projects
         Provision of BETA level APIs
@@ -26,10 +27,13 @@ title: What's New
     - Transformation Advisor Local
         IBM Cloud Transformation Advisor Local Beta can now be installed on laptops
     - Data Collector Enhancements
-        Data Collection can be executed against a list of specific applications within a WebSphere profile
-        Data Collection can be executed against specified profiles without the need to provide credentials
+        Data Collection can be executed against a list of specific applications within
+	a WebSphere profile
+        Data Collection can be executed against specified profiles without the need to
+	provide credentials
     - Analysis Enhancements
-        Shared Libraries are now accessible as a convenient tab alongside applications that use them
+        Shared Libraries are now accessible as a convenient tab alongside applications 
+	that use them
 
 **April, 2019** 1.9.5: What's New
 
